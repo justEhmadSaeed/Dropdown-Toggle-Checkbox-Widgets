@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
 class CheckBoxList extends StatefulWidget {
-  CheckBoxList({required this.children});
+  CheckBoxList({required this.children}) {
+    this.values = List.generate(children.length, (index) => false);
+  }
   final List<String> children;
+  // final int count;
+  late final List<bool> values;
   @override
   _CheckBoxListState createState() => _CheckBoxListState();
 }
@@ -10,21 +14,24 @@ class CheckBoxList extends StatefulWidget {
 class _CheckBoxListState extends State<CheckBoxList> {
   @override
   Widget build(BuildContext context) {
-    List<bool> values =
-        List.generate(this.widget.children.length, (index) => false);
+    var children = widget.children;
+    var values = widget.values;
     return Column(
-        children: widget.children
-            .map(
-              (element) => CheckboxListTile(
-                title: Text(element),
-                value: false,
-                onChanged: (bool? value) {
-                  setState(() {
-                    values[0] = value!;
-                  });
-                },
-              ),
-            )
-            .toList());
+        children: children.map((element) {
+      int index = children.indexOf(element);
+      return CheckboxListTile(
+        activeColor: Colors.teal,
+        title: Text(
+          element,
+          style: TextStyle(fontSize: 20),
+        ),
+        value: values[index],
+        onChanged: (bool? value) {
+          setState(() {
+            values[index] = value!;
+          });
+        },
+      );
+    }).toList());
   }
 }
