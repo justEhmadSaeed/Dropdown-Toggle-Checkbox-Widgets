@@ -154,7 +154,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 )
               ],
-            )
+            ),
+            CustomCard(children: [
+              CheckBoxList(
+                children: [
+                  'Consultant Notes Only',
+                  'Overdue Only',
+                  'Date Range',
+                ],
+              ),
+            ]),
           ],
         ),
       ),
