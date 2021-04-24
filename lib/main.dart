@@ -54,8 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+        child: ListView(
           children: [
             CustomCard(
               children: [
@@ -75,7 +74,26 @@ class _MyHomePageState extends State<MyHomePage> {
                 SizedBox(
                   height: 20,
                 ),
-                TransactionToggle()
+                TransactionToggle(children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.login,
+                      ),
+                      Text('Money In'),
+                    ],
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.logout,
+                      ),
+                      Text('Money Out'),
+                    ],
+                  ),
+                ])
               ],
             ),
             CustomCard(children: [
@@ -88,7 +106,55 @@ class _MyHomePageState extends State<MyHomePage> {
                   'Direct Material'
                 ],
               ),
-            ])
+            ]),
+            CustomCard(
+              children: [
+                Text(
+                  'Transaction Health',
+                  style: TextStyle(fontSize: 30),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                TransactionToggle(
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.recommend,
+                          color: Colors.green,
+                          size: 30,
+                        ),
+                        Text('Good'),
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.thumb_down,
+                          color: Colors.yellow[800],
+                          size: 30,
+                        ),
+                        Text('Okay'),
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.thumb_down,
+                          color: Colors.red[600],
+                          size: 30,
+                        ),
+                        Text('Bad'),
+                      ],
+                    ),
+                  ],
+                )
+              ],
+            )
           ],
         ),
       ),
