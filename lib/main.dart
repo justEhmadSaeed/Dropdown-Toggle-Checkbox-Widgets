@@ -3,6 +3,7 @@ import 'package:sort_and_filter_ui/CustomCard.dart';
 import 'package:sort_and_filter_ui/DropDown.dart';
 import 'package:sort_and_filter_ui/TransactionToggle.dart';
 import 'package:flutter/material.dart';
+import 'package:sort_and_filter_ui/constants.dart';
 
 void main() {
   runApp(MyApp());
@@ -37,17 +38,11 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.teal,
         actions: [
           TextButton(
-            child: Text(
-              'CLEAR',
-              style: TextStyle(color: Colors.white),
-            ),
+            child: Text('CLEAR', style: kAppbarActionsStyle),
             onPressed: () {},
           ),
           TextButton(
-            child: Text(
-              'APPLY',
-              style: TextStyle(color: Colors.white),
-            ),
+            child: Text('APPLY', style: kAppbarActionsStyle),
             onPressed: () {},
           )
         ],
@@ -60,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Text(
                   'Sort by',
-                  style: TextStyle(fontSize: 30),
+                  style: kHeadingStyle,
                 ),
                 DropDown(),
               ],
@@ -69,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Text(
                   'Transaction Types',
-                  style: TextStyle(fontSize: 30),
+                  style: kHeadingStyle,
                 ),
                 SizedBox(
                   height: 20,
@@ -111,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Text(
                   'Transaction Health',
-                  style: TextStyle(fontSize: 30),
+                  style: kHeadingStyle,
                 ),
                 SizedBox(
                   height: 20,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sort_and_filter_ui/constants.dart';
 
 class CheckBoxList extends StatefulWidget {
   CheckBoxList({required this.children}) {
@@ -23,7 +24,7 @@ class _CheckBoxListState extends State<CheckBoxList> {
         activeColor: Colors.teal,
         title: Text(
           element,
-          style: TextStyle(fontSize: 20),
+          style: kCheckboxListTileStyle,
         ),
         value: values[index],
         onChanged: (bool? value) {

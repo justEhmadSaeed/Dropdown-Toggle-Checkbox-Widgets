@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sort_and_filter_ui/constants.dart';
 
 class DropDown extends StatefulWidget {
   @override
@@ -16,7 +17,7 @@ class _DropDownState extends State<DropDown> {
           dropdownValue = value!;
         });
       },
-      style: TextStyle(fontSize: 18),
+      style: kDropdownItemsStyle,
       isExpanded: true,
       items:
           ['Newest First', 'Oldest First', 'Value High-Low', 'Value Low-High']
